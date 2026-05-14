@@ -113,6 +113,7 @@ export default function UploadImage() {
   const originalCanvasRef = useRef(null);
   const resultCanvasRef = useRef(null);
   const sourceImageRef = useRef(null);
+  const uploadInputRef = useRef(null);
   const isPaintingRef = useRef(false);
   const strokeSourceRef = useRef(null);
   const cloneOffsetRef = useRef({ x: 0, y: 0 });
@@ -157,6 +158,10 @@ export default function UploadImage() {
     setActiveView("before");
     setStatus("Loading image...");
     drawImageToCanvases(nextUrl);
+  };
+
+  const openUploadPicker = () => {
+    uploadInputRef.current?.click();
   };
 
   const buildBackgroundEstimate = (imageData) => {
@@ -610,7 +615,13 @@ export default function UploadImage() {
             </button>
             <label className="inline-flex cursor-pointer items-center justify-center rounded border border-[#d7ff78]/70 bg-[linear-gradient(135deg,#f6ffae,#6ff0b2)] px-5 py-3 text-sm font-bold text-[#090d0c] shadow-[0_16px_40px_rgba(111,240,178,0.22)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_22px_52px_rgba(215,255,120,0.28)]">
               Upload
-              <input type="file" accept="image/*" onChange={handleUpload} className="sr-only" />
+              <input
+                ref={uploadInputRef}
+                type="file"
+                accept="image/*"
+                onChange={handleUpload}
+                className="sr-only"
+              />
             </label>
           </div>
         </header>
@@ -629,13 +640,17 @@ export default function UploadImage() {
             <div className="relative flex flex-1 items-center justify-center overflow-hidden rounded border border-white/10 bg-[#121816] shadow-[0_32px_110px_rgba(0,0,0,0.46)] ring-1 ring-white/[0.03]">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(215,255,120,0.13),transparent_34%),radial-gradient(circle_at_15%_80%,rgba(103,232,171,0.1),transparent_34%)]" />
               {!imageUrl && (
-                <div className="flex min-h-[520px] flex-col items-center justify-center gap-3 px-6 text-center">
+                <button
+                  type="button"
+                  onClick={openUploadPicker}
+                  className="relative z-10 flex min-h-[520px] w-full flex-col items-center justify-center gap-3 px-6 text-center transition duration-200 hover:bg-white/[0.03] focus:outline-none focus:ring-2 focus:ring-[#d7ff78]/70 focus:ring-offset-2 focus:ring-offset-[#121816]"
+                >
                   <div className="h-14 w-14 rounded-full border border-[#d7ff78]/40 bg-[#d7ff78]/10 shadow-[0_0_42px_rgba(215,255,120,0.2)]" />
                   <p className="text-lg font-bold text-white">Upload a Gemini image</p>
                   <p className="max-w-md text-sm text-[#90a096]">
                     The preview will appear here with before and after controls.
                   </p>
-                </div>
+                </button>
               )}
 
               <canvas
