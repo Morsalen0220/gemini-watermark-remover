@@ -67,10 +67,3 @@ Publish directory: .next
 ## License
 
 This project is released under the MIT License.
-
-## Developer Credit
-
-Developed by Morsalen.
-
-- WhatsApp: https://wa.me/8801762783339
-- Facebook: https://www.facebook.com/morsalen0220/

@@ -773,6 +773,31 @@ export default function UploadImage() {
             </div>
           </aside>
         </section>
+
+        <footer className="mt-auto border-t border-white/10 pt-4 text-center text-sm text-[#9fb0a5]">
+          <p>
+            Developed by{" "}
+            <span className="font-semibold text-[#d7ff78]">Morsalen</span>
+          </p>
+          <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href="https://wa.me/8801762783339"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded border border-white/10 px-3 py-2 text-[#dfe9df] transition hover:border-[#d7ff78]/60 hover:text-[#d7ff78]"
+            >
+              WhatsApp
+            </a>
+            <a
+              href="https://www.facebook.com/morsalen0220/"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded border border-white/10 px-3 py-2 text-[#dfe9df] transition hover:border-[#d7ff78]/60 hover:text-[#d7ff78]"
+            >
+              Facebook
+            </a>
+          </div>
+        </footer>
       </section>
     </main>
   );
