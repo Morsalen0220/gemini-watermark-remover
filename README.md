@@ -1,28 +1,26 @@
 # Gemini Watermark Remover
 
-A browser-based Next.js tool for removing supported Gemini watermark logos from images.
-
-The main removal flow uses the `@pilio/gemini-watermark-remover` SDK, which applies calibrated Gemini alpha maps and reverse alpha blending. The app also includes manual fallback tools for logo fill and clone-style cleanup.
+A simple browser-based tool for removing supported Gemini watermark logos from images. Upload an image, run the remover, preview the result, and download the cleaned PNG.
 
 ## Features
 
-- Large before/after image preview
-- Calibrated Gemini watermark removal
-- Premium scanning and shine effects during processing
-- Sound effect on removal
-- Manual fill and clone fallback tools
-- Canvas-only export as PNG
+- Before and after image preview
+- One-click watermark removal
+- Scanning and shine effect while processing
+- Sound effect during removal
+- Manual Fill Logo tool
+- Clone cleanup tool
+- PNG download
 
-## Tech Stack
+## How To Use
 
-- Next.js
-- React
-- Canvas API
-- OpenCV.js fallback cleanup
-- `@pilio/gemini-watermark-remover`
-- Tailwind CSS
+1. Upload a Gemini image.
+2. Click **Remove Watermark**.
+3. Check the **After** preview.
+4. If needed, use **Fill Logo** or **Clone** for manual cleanup.
+5. Click **Download PNG** to save the final image.
 
-## Getting Started
+## Run Locally
 
 Install dependencies:
 
@@ -30,29 +28,49 @@ Install dependencies:
 npm install
 ```
 
-Run the development server:
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-Open:
+Open the app:
 
 ```text
 http://localhost:3000
 ```
 
-## Scripts
+## Build
 
 ```bash
-npm run dev
 npm run build
 npm run start
-npm run lint
+```
+
+## Deploy
+
+You can deploy this app on Netlify, Vercel, or any hosting provider that supports Next.js.
+
+For Netlify:
+
+```text
+Build command: npm run build
+Publish directory: .next
 ```
 
 ## Notes
 
-- Best results come from original Gemini exports that match the SDK's supported watermark patterns.
-- Cropped, resized, compressed, or screenshot images may need the manual Fill or Clone tools.
-- The shine sound currently loads from MyInstants with a generated Web Audio fallback.
+- Best results come from original Gemini image exports.
+- Cropped, resized, compressed, or screenshot images may need manual cleanup.
+- All editing happens in the browser canvas before export.
+
+## License
+
+This project is released under the MIT License.
+
+## Developer Credit
+
+Developed by Morsalen.
+
+- WhatsApp: https://wa.me/8801762783339
+- Facebook: https://www.facebook.com/morsalen0220/
