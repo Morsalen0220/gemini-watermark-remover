@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Gemini Watermark Remover
+
+A browser-based Next.js tool for removing supported Gemini watermark logos from images.
+
+The main removal flow uses the `@pilio/gemini-watermark-remover` SDK, which applies calibrated Gemini alpha maps and reverse alpha blending. The app also includes manual fallback tools for logo fill and clone-style cleanup.
+
+## Features
+
+- Large before/after image preview
+- Calibrated Gemini watermark removal
+- Premium scanning and shine effects during processing
+- Sound effect on removal
+- Manual fill and clone fallback tools
+- Canvas-only export as PNG
+
+## Tech Stack
+
+- Next.js
+- React
+- Canvas API
+- OpenCV.js fallback cleanup
+- `@pilio/gemini-watermark-remover`
+- Tailwind CSS
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+```bash
+npm run dev
+npm run build
+npm run start
+npm run lint
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Notes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Best results come from original Gemini exports that match the SDK's supported watermark patterns.
+- Cropped, resized, compressed, or screenshot images may need the manual Fill or Clone tools.
+- The shine sound currently loads from MyInstants with a generated Web Audio fallback.

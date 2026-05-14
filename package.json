@@ -9,9 +9,14 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@pilio/gemini-watermark-remover": "^1.0.10",
+    "@tensorflow/tfjs": "^4.22.0",
+    "konva": "^10.3.0",
     "next": "16.2.6",
+    "opencv.js": "^1.2.1",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "react-konva": "^19.2.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

@@ -24,3 +24,104 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes scanLine {
+  0% {
+    transform: translateY(-120%);
+  }
+
+  100% {
+    transform: translateY(720%);
+  }
+}
+
+@keyframes shineSweep {
+  0% {
+    background-position: -220% 0;
+  }
+
+  100% {
+    background-position: 220% 0;
+  }
+}
+
+@keyframes progressPulse {
+  0% {
+    transform: translateX(-110%);
+  }
+
+  50% {
+    transform: translateX(70%);
+  }
+
+  100% {
+    transform: translateX(220%);
+  }
+}
+
+@keyframes sparklePop {
+  0% {
+    opacity: 0;
+    transform: scale(0.25);
+  }
+
+  28% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}
+
+@keyframes soundWaveSweep {
+  0% {
+    opacity: 0;
+    transform: scale(0.15);
+  }
+
+  24% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(2.4);
+  }
+}
+
+@keyframes soundShineSlice {
+  0% {
+    opacity: 0;
+    background-position: -180% 0;
+  }
+
+  18% {
+    opacity: 0.95;
+  }
+
+  100% {
+    opacity: 0;
+    background-position: 180% 0;
+  }
+}
+
+@keyframes prismFlash {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) rotate(-8deg);
+    filter: blur(18px);
+  }
+
+  30% {
+    opacity: 0.62;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.45) rotate(12deg);
+    filter: blur(28px);
+  }
+}
